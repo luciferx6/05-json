@@ -1,10 +1,13 @@
 const fs = require("fs/promises");
 
+const file = fs.readFile("sample.json");
+const read = JSON.parse(file.toString());
+
 const interval = (ms) =>
   new Promise((resolve, reject) => {
     setInterval(() => {
       resolve();
-      console.log();
+      console.log(read.firstName);
     }, ms);
   });
 
