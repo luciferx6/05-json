@@ -1,17 +1,17 @@
 const fs = require("fs/promises");
 
-// const timeout = (ms) =>
-//   new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve();
-//       console.log("TIMER");
-//     }, ms);
-//   });
+const interval = (ms) =>
+  new Promise((resolve, reject) => {
+    setInterval(() => {
+      resolve();
+      console.log();
+    }, ms);
+  });
 
 const main = async () => {
-  const fileBuffer = await fs.readFile("sample.json");
-  const obj = console.log(JSON.parse(fileBuffer.toString()));
-  console.log(obj.phoneNumbers[0].number);
+  interval(500);
+  const json = await fs.readFile("sample.json");
+  console.log(json);
 };
 
 main();
