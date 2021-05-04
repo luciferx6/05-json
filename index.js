@@ -3,7 +3,7 @@ const fs = require("fs/promises");
 setInterval(async () => {
   const file = await fs.readFile("sample.json");
   const obj = JSON.parse(file.toString());
-  console.log(obj.phoneNumbers[0].number);
+  console.log(obj.phoneNumbers.length);
   console.log(obj.firstName, obj.lastName);
   console.log(obj.address.streetAddress, obj.address.city, obj.address.state);
 }, 1000);
